@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="customer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>PortablePower | Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h2>Portable<span>Power</span></h2>
+      </div>
+      <div class="search-bar">
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search power solutions"
+        />
+        <i class="fas fa-search"></i>
+      </div>
+    </header>
+    <main>
+      <!-- The code for side navigtion starts from here -->
+      <nav>
+        <div class="profile">
+          <img src="./images/user-02.jpg" alt="" />
+          <div class="username">YONGAMA MAKELENI</div>
+        </div>
+        <ul id="navigation">
+          <li data-id="dashboard"><i class="far fa-bar-chart"></i>Dashboard</li>
+          <li data-id="profile"><i class="far fa-user"></i>Update profile</li>
+          <li data-id="browseSolution">
+            <i class="fas fa-bolt-lightning"></i>Power solutions
+          </li>
+          <li data-id="listPowerSolution">
+            <i class="fas fa-bolt-lightning"></i>List power solutions
+          </li>
+          <li data-id="message"><i class="far fa-comment"></i>Messages</li>
+          <li data-id="wallet"><i class="fas fa-wallet"></i>Wallet</li>
+          <li data-id="logout"><i class="fas fa-sign-out"></i>Logout</li>
+        </ul>
+      </nav>
+      <!-- And ends here for the HTML -->
+
+      <!-- The main container for displaying various sections is this -->
+      <section class="main">
+        <div class="title"><h2>Dashboard</h2></div>
+        <div class="wrapper">
+          <div class="overview">
+            <div class="balance">
+              <p>Wallet</p>
+              <b>R 1200</b>
+            </div>
+          </div>
+          <div class="history">
+            <h4>History</h4>
+            <div class="cards-container">
+              <div class="card">
+                <img src="./images/plant-large-02.JPG" alt="" />
+                <div>
+                  <b>WEDO</b><small>Date rented: April 11 2023</small>
+                  <div class="below">
+                    <button>Details</button>
+                    <h5>R250</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="./images/plant-large-05.JPG" alt="" />
+                <div>
+                  <b>CHAMPION</b><small>Date rented: April 11 2023</small>
+                  <div class="below">
+                    <button>Details</button>
+                    <h5>R250</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- And it ends here -->
+    </main>
+    <script src="controller.js" type="module"></script>
+  </body>
+</html>
