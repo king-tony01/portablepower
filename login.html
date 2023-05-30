@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>PortablePower Solution | Login</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <h2>Portable<span>Power</span></h2>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+      <div class="access">
+        <p>New user?</p>
+        <a href="customersignup.html" class="primary">Sign up</a>
+      </div>
+    </header>
+    <section class="hero" style="min-height: 100vh">
+      <form>
+        <h2>Login</h2>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            autofocus
+          />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <p>Forgot password? <a href="#">Recover password</a></p>
+        <button type="submit" id="login">Login</button>
+      </form>
+    </section>
+    <script>
+      const form = document.querySelector("form");
+      const loginBtn = document.getElementById("login");
+      loginBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const newForm = {
+          email: "",
+          password: "",
+        };
+        console.log(newForm);
+        // CREATING A USER OBJECT TO BE SENT TO SERVER
+        newForm.email = form.email.value;
+        newForm.password = form.password.value;
+        try {
+          const response = await fetch("http://localhost:8080/api/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newForm),
+          });
+          const data = await response.json();
+          console.log(data);
+          const { isUser } = data;
+          const user = JSON.parse(data.details);
+          const {
+            customer_email: email,
+            customer_name: fullName,
+            customer_phone: phone,
+          } = user;
+          console.log(user);
+          if (isUser) {
+            location.assign(
+              `http://localhost:8080/user?email=${email}&name=${fullName}&phone=${phone}`
+            );
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      });
+    </script>
+  </body>
+</html>

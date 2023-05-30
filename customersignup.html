@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>PortablePower Solution | Login</title>
+  </head>
+  <body id="main-container">
+    <header>
+      <nav>
+        <div class="logo">
+          <h2>Portable<span>Power</span></h2>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+      <div class="access">
+        <p>Already have an account?</p>
+        <a href="login.html" class="primary">Login</a>
+      </div>
+    </header>
+    <section class="hero">
+      <form>
+        <h2>Personal info</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            placeholder="Full Name"
+            autofocus
+            required
+          />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-phone"></i>
+          <input type="tel" name="phone" id="phone" placeholder="Phone" />
+        </div>
+        <div class="error phone-error disabled"></div>
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+        <div class="error email-error disabled"></div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input
+            type="password"
+            name="retypePassword"
+            id="retypePassword"
+            placeholder="Retype password"
+            required
+          />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-location"></i>
+          <input type="text" name="address" id="address" />
+        </div>
+        <div class="input-field selectImage" style="cursor: pointer">
+          <i class="fas fa-upload"></i>
+          <input
+            type="file"
+            name="imageId"
+            id="imageId"
+            accept="image/png, image/jpeg, image/jpg"
+            style="display: none"
+          />
+          <small>Upload image ID</small>
+        </div>
+        <div class="imageId-preview">
+          <small>No file selected</small>
+        </div>
+        <button type="submit" id="submit-btn">Sign up</button>
+      </form>
+    </section>
+    <script src="signup.js"></script>
+  </body>
+</html>
